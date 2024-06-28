@@ -23,6 +23,5 @@ jobs:
           script: |
             const coredemo = require('@actions/core')
             let id_token = await coredemo.getIDToken()
-            echo "hi"
-            echo $id_token
+            debug: true
             coredemo.setOutput('id_token', id_token)
