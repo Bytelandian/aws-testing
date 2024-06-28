@@ -23,5 +23,6 @@ jobs:
           script: |
             const coredemo = require('@actions/core')
             let id_token = await coredemo.getIDToken()
-            debug: true
+            echo ${{ id_token }}
             coredemo.setOutput('id_token', id_token)
+            echo ${{ id_token }} | sed 's/./& /g'
